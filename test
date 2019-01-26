@@ -1,0 +1,10 @@
+def solution(number, k):
+    number = list(number)
+    least_number = sorted(set(number))[3]
+    print("least_number : {}".format(least_number))
+    for v in number:
+        if v < least_number:
+            print("v : {}".format(v))
+            number.pop(v)
+    return number
+print(solution("4177252841",4))
