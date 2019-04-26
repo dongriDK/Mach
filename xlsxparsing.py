@@ -9,5 +9,5 @@ allData = []
 #print(sheet1['D8'].value)
 for i in sheet1.iter_rows(min_row=4, max_col=24, max_row=23):
 	for j in i:
-		if j.value in isdigit():
-		print(j.value,"\n")
+		if len(list(filter(str.isdigit, j.value))) > 4:
+			print(j.value,"\n")
