@@ -9,15 +9,15 @@ import telegram
 
 # 분반까지 해야함??
 # 봉사 15904 1-0-2
-url = "http://sugang.hannam.ac.kr/sugang/common/loginForm.do"
+url = ""
 
 Login_OK = False
-my_token = "607900915:AAHzxIB7OKud7KXzzf_gCCfW8qJd1UaIVoM"
+my_token = ""
 bot = telegram.Bot(token = my_token)
 try:
     chat_id = bot.getUpdates()[0].message.chat.id
 except:
-    chat_id = 683947176
+    chat_id = 
 
 class Sugang():
     def __init__(self, master):
@@ -48,7 +48,7 @@ class Sugang():
         global Login_OK
         if Login_OK == False:
             self.Login_Hannam_Sugang()
-        # WebDriverWait(self.driver, 10).until(EC.presence_of_element_located((By.XPATH, "//iframe[starts-with(@src, 'http://sugang.hannam.ac.kr/sugang/common/frame.do?method=left&UID=719a4369:1690f0fdf9d:-7b7c')]")))
+        # WebDriverWait(self.driver, 10).until(EC.presence_of_element_located((By.XPATH, "//iframe[starts-with(@src, 'http://sugang./')]")))
         a = self.driver.execute_script("return NetFunnel.TS_BYPASS")
         print("before NetFunnel : {}".format(a))
         self.driver.execute_script("NetFunnel.TS_BYPASS = true")
@@ -69,8 +69,8 @@ class Sugang():
         time.sleep(0.5)
         Login_OK = True
         while 1:
-            # self.driver.find_element_by_name('memberNo').send_keys("20140765")
-            # self.driver.find_element_by_name('password').send_keys("QboWdg@12")
+            # self.driver.find_element_by_name('memberNo').send_keys("")
+            # self.driver.find_element_by_name('password').send_keys("")
             self.driver.find_element_by_name('memberNo').send_keys(id)
             self.driver.find_element_by_name('password').send_keys(pw)
             try:
@@ -94,7 +94,7 @@ class Sugang():
 
     # 20896 24246 23778
     # 취전   생활it 스마
-    # QboWdg@12
+    
     def Apply_Class(self):
         # classList = sel   f.Calc_Sugang_List()
         classList = self.classText.get("1.0", END)[:-1].split(" ")
